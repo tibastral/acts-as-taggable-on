@@ -46,9 +46,9 @@ module ActsAsTaggableOn::Taggable
         initialize_acts_as_taggable_on_core
       end
       
-      # all column names are necessary for PostgreSQL group clause
+      # all column names are necessary for PostgreSQL group clause, but not for MySQL, so ignore it for now (performance)
       def grouped_column_names_for(object)
-        object.column_names.map { |column| "#{object.table_name}.#{column}" }.join(", ")
+        "#{object.table_name}.#{primary_key}"
       end
 
       ##

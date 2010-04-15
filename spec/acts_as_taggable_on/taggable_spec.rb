@@ -253,11 +253,11 @@ describe "Taggable" do
 
   describe "grouped_column_names_for method" do
     it "should return all column names joined for Tag GROUP clause" do
-      @taggable.grouped_column_names_for(Tag).should == "tags.id, tags.name"
+      @taggable.grouped_column_names_for(Tag).should == "tags.id"
     end
 
     it "should return all column names joined for TaggableModel GROUP clause" do
-      @taggable.grouped_column_names_for(TaggableModel).should == "taggable_models.id, taggable_models.name, taggable_models.type"
+      @taggable.grouped_column_names_for(TaggableModel).should == "taggable_models.id"
     end
   end
 

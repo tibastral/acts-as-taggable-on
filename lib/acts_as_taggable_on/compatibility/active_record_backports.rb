@@ -10,6 +10,10 @@ module ActsAsTaggableOn
           named_scope :select,   lambda { |select|     { :select => select } }
           named_scope :limit,    lambda { |limit|      { :limit => limit } }
           named_scope :readonly, lambda { |readonly|   { :readonly => readonly } }   
+          
+          def self.to_sql
+            construct_finder_sql({})
+          end
         end
       end
     end
