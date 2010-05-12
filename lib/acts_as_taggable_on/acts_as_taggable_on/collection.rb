@@ -84,8 +84,8 @@ module ActsAsTaggableOn::Taggable
         taggable_join << " AND #{table_name}.#{inheritance_column} = '#{name}'" unless descends_from_active_record? # Current model is STI descendant, so add type checking to the join condition      
 
         joins = [
-          tagging_join,
           taggable_join,
+          tagging_join,
           scope[:joins]
         ].compact.reverse
 
