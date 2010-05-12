@@ -25,6 +25,6 @@ if defined?(ActiveRecord::Base)
   ActiveRecord::Base.send :include, ActsAsTaggableOn::Tagger
 end
 
-if defined?(ActionView::Base)
-  ActionView::Base.send :include, ActsAsTaggableOn::TagsHelper
-end
+# if defined?(ActionView::Base)
+#   ActionView::Base.send :include, ActsAsTaggableOn::TagsHelper
+# end
